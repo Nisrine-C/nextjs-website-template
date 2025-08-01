@@ -18,7 +18,9 @@ export default function Map() {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <Marker position={[40.74844, -74.00426]}>
-        <Popup>We are here!</Popup>
+        <Popup>
+          Welcome to our cozy cat-corner! Come visit us and bring tuna snacks!
+        </Popup>
       </Marker>
     </MapContainer>
   );

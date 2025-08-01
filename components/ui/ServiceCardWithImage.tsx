@@ -20,8 +20,8 @@ export default function ServiceCardWithImage({
     <div
       className={`relative overflow-hidden bg-gray-100 md:visible collapse ${
         isHorizontal
-          ? "md:w-1/2 md:aspect-square "
-          : "md:h-1/2 md:aspect-square"
+          ? "md:w-1/2 h-full md:aspect-square "
+          : "md:h-1/2 w-full md:aspect-square"
       }`}
     >
       <img
@@ -34,11 +34,11 @@ export default function ServiceCardWithImage({
         className={`absolute w-0 h-0 border-transparent ${
           isHorizontal
             ? direction === 0
-              ? "right-0 top-12 border-t-[20px] border-t-transparent border-b-[20px] border-b-transparent border-r-[20px] border-r-white" // Right-pointing (wide but short)
-              : "left-0 bottom-12 border-t-[20px] border-t-transparent border-b-[20px] border-b-transparent border-l-[20px] border-l-white" // Left-pointing (wide but short)
+              ? "right-0 top-12 border-t-[20px] border-t-transparent border-b-[20px] border-b-transparent border-r-[20px] border-r-[var(--section-light)]" // Right-pointing (wide but short)
+              : "left-0 bottom-12 border-t-[20px] border-t-transparent border-b-[20px] border-b-transparent border-l-[20px] border-l-[var(--section-light)]" // Left-pointing (wide but short)
             : direction === 0
-            ? "left-1/2 -translate-x-1/2 bottom-0 border-l-[20px] border-l-transparent border-r-[20px] border-r-transparent border-b-[20px] border-b-white" // Down-pointing (wide but short)
-            : "left-1/2 -translate-x-1/2 top-0 border-l-[20px] border-l-transparent border-r-[20px] border-r-transparent border-t-[20px] border-t-white" // Up-pointing (wide but short)
+            ? "left-1/2 -translate-x-1/2 bottom-0 border-l-[20px] border-l-transparent border-r-[20px] border-r-transparent border-b-[20px] border-b-[var(--section-light)]" // Down-pointing (wide but short)
+            : "left-1/2 -translate-x-1/2 top-0 border-l-[20px] border-l-transparent border-r-[20px] border-r-transparent border-t-[20px] border-t-[var(--section-light)]" // Up-pointing (wide but short)
         }`}
       ></div>
     </div>
@@ -53,17 +53,21 @@ export default function ServiceCardWithImage({
       }`}
       style={{ color: "var(--highlight)" }}
     >
-      {highlight && <h2 className="text-xl font-semibold mb-2">{highlight}</h2>}
-      <h3 className="text-2xl font-light text-gray-900 tracking-wide mb-2">
+      {highlight && (
+        <h2 className="dancing text-xl font-semibold mb-2">{highlight}</h2>
+      )}
+      <h3 className=" text-2xl font-light text-gray-900 tracking-wide mb-2">
         {title}
       </h3>
-      <p className="text-gray-600 leading-relaxed">{description}</p>
+      <p className="text-gray-600 leading-relaxed text-justify">
+        {description}
+      </p>
     </div>
   );
 
   return (
     <div
-      className={`flex flex-around group bg-white h-full ${
+      className={`flex flex-around group bg-[var(--section-light)] h-full ${
         isHorizontal ? "md:flex-row flex-col" : "flex-col"
       }`}
     >
