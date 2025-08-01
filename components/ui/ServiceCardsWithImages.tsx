@@ -97,7 +97,7 @@ export default function ServiceCardsWithImages({
                       </div>
                     )}
                     {row[2] && (
-                      <div className="md:h-[250px] md:h-full">
+                      <div className="h-[250px] md:h-full">
                         <FadeInOnScroll delay={0.2}>
                           <ServiceCardWithImage {...row[2]} />
                         </FadeInOnScroll>
