@@ -25,7 +25,7 @@ export default function MenuItem({
         <div
           className={`flex items-start justify-center flex-shrink-0 shadow-md ${
             imageSrc
-              ? "w-24 h-24 rounded-md overflow-hidden"
+              ? "md:w-24 md:h-24 w-40 h-40 rounded-md overflow-hidden"
               : "h-18 w-18 bg-gray-100 rounded-full"
           }`}
         >
